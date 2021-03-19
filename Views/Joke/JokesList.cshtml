@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "All jokes";
+    var jokes = ViewData["Jokes"] as IEnumerable<JokeWebApp.Models.JokeModel>;
+};
+
+
+
+@if (jokes.Count() > 0)
+{
+<p>Here you can see all jokes from our database</p>
+                <div>
+                    <div>
+                        @foreach (var joke in jokes)
+                        {
+                        <div>@joke.Joke </div>
+                        }
+                        </div>
+                    </div>
+}
+
+else
+{
+                <p>Sorry, but database is empty!</p>
+}
