@@ -1,7 +1,9 @@
 ﻿using JokeWebApp.Map;
 using JokeWebApp.Models;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,8 +24,16 @@ namespace JokeWebApp.Services
 
         public async Task SaveJokeToDatabase(JokeModel jokeModel)
         {
+            if (await _jokeRepository.GetById(jokeModel.Id.ToString()) == null)
+            {
+                await _jokeRepository.AddAsync(Mapper.ToEntity(jokeModel));
+            }
+            
+            
+                
+            
+            
 
-            await _jokeRepository.AddAsync(Mapper.ToEntity(jokeModel));
         }
 
     }

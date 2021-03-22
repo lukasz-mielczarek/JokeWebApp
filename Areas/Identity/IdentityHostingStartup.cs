@@ -20,7 +20,7 @@ namespace JokeWebApp.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("JokeWebAppContextConnection")));
 
-                services.AddDefaultIdentity<JokeWebAppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<JokeWebAppUser>(options => options.SignIn.RequireConfirmedAccount = false)
                         .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<JokeWebAppContext>();
 
