@@ -1,50 +1,47 @@
 ﻿using JokeWebApp.Entities;
 using JokeWebApp.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace JokeWebApp.Map
 {
-    
-        public static class Mapper
+
+    public static class Mapper
+    {
+        public static Joke ToEntity(JokeModel model)
         {
-            public static Joke ToEntity(JokeModel model)
+            var entity = new Joke
             {
-                var entity = new Joke
-                {
-                    Id = model.Id,
-                    joke = model.Joke
-                    
-                };
+                Id = model.Id,
+                joke = model.Joke
 
-                return entity;
-            }
+            };
 
-            
+            return entity;
+        }
 
-            public static JokeModel ToModel(Joke entity)
+
+
+        public static JokeModel ToModel(Joke entity)
+        {
+            var model = new JokeModel
             {
-                var model = new JokeModel
-                {
-                    Id = entity.Id,
-                    Joke =entity.joke
-                };
+                Id = entity.Id,
+                Joke = entity.joke
+            };
 
-                return model;
-            }
-            public static List<JokeModel> ToModelList(List<Joke> entities)
+            return model;
+        }
+        public static List<JokeModel> ToModelList(List<Joke> entities)
+        {
+            var list = new List<JokeModel>();
+            foreach (var entity in entities)
             {
-                var list = new List<JokeModel>();
-                foreach (var entity in entities)
-                {
-                    list.Add(ToModel(entity));
-                }
-                return list;
+                list.Add(ToModel(entity));
             }
+            return list;
+        }
 
 
     }
-    }
+}
 

@@ -1,5 +1,3 @@
-using System;
-
 namespace JokeWebApp.Models
 {
     public class ErrorViewModel

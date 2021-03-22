@@ -1,10 +1,6 @@
 ﻿using JokeWebApp.Map;
 using JokeWebApp.Models;
-using Microsoft.Data.SqlClient;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace JokeWebApp.Services
@@ -28,11 +24,6 @@ namespace JokeWebApp.Services
             {
                 await _jokeRepository.AddAsync(Mapper.ToEntity(jokeModel));
             }
-            
-            
-                
-            
-            
 
         }
 

@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using JokeWebApp.Areas.Identity.Data;
+﻿using JokeWebApp.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace JokeWebApp.Areas.Identity.Pages.Account
 {
@@ -22,7 +19,7 @@ namespace JokeWebApp.Areas.Identity.Pages.Account
         private readonly SignInManager<JokeWebAppUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<JokeWebAppUser> signInManager, 
+        public LoginModel(SignInManager<JokeWebAppUser> signInManager,
             ILogger<LoginModel> logger,
             UserManager<JokeWebAppUser> userManager)
         {
@@ -77,7 +74,7 @@ namespace JokeWebApp.Areas.Identity.Pages.Account
             returnUrl ??= Url.Content("~/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-        
+
             if (ModelState.IsValid)
             {
                 // This doesn't count login failures towards account lockout

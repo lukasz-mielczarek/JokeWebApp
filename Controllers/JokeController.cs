@@ -1,11 +1,8 @@
-﻿using JokeWebApp.Services;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using JokeWebApp.JokeApi;
+﻿using JokeWebApp.JokeApi;
+using JokeWebApp.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace JokeWebApp.Controllers
 {
@@ -26,7 +23,7 @@ namespace JokeWebApp.Controllers
             return View("Admin");
         }
         [Authorize]
-        
+
         public async Task<IActionResult> GetAllJokesFromDatabase()
         {
             var results = await _jokeService.GetJokesFromDatabase();

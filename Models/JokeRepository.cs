@@ -1,8 +1,6 @@
 ﻿using JokeWebApp.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace JokeWebApp.Models
@@ -27,7 +25,7 @@ namespace JokeWebApp.Models
         {
             var result = await dbSet.ToListAsync();
             return result;
-            
+
         }
 
         public async Task<Joke> GetById(string id)

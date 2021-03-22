@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace JokeWebApp.Areas.Identity.Utility
+﻿namespace JokeWebApp.Areas.Identity.Utility
 {
     public class Roles
     {
